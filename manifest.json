@@ -1,0 +1,35 @@
+{
+    "description": "Filter Obscene Images from Browser",
+    "manifest_version": 2,
+    "name": "StopPorn",
+    "version": "1.0.1",
+	"author": "iiitdm",
+  
+    "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "<all_urls>",
+      "proxy",
+      "storage"
+    ],
+  
+    "background": {
+      "scripts": [
+		  "browser-polyfill.js",
+          "pr_load.js",
+          "stat_img.js",
+          "background.js",
+          "whitelist.js"
+        ]
+    },
+	
+    "browser_action": {
+      "default_title" : "Loading....",
+      "default_icon" : {
+        "32" : "icons/icon_32_1.png"
+      },
+      "default_popup" :  "popup.html"
+    },
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval';  object-src 'self' blob:; img-src blob: data:;"
+  }
